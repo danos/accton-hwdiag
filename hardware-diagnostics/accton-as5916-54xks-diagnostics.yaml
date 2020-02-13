@@ -1,0 +1,22 @@
+---
+name: Accton AS5916-54XKS hardware diagnostics
+probe: test "$(/opt/vyatta/bin/vyatta-platform-util --what-am-i)" = "accton.as5916-54xks"
+diagnostics:
+        bcm-shell:
+                completions:
+                        bcm-shell: l2 portstat phy diag show
+                        bcm-shell l2: show
+                        bcm-shell diag: pp counters
+                        bcm-shell diag counters: graphical
+                        bcm-shell diag pp: last pkttm fdt
+                        bcm-shell phy: info
+                        bcm-shell show: counters unit features temp-pvt
+                        bcm-shell show counters: all compact full
+                run: |
+                        /opt/vyatta/bin/vplsh -l -c 'fal plugin bcm shell %args%'
+
+        packet-memory-retune:
+                completions:
+                        packet-memory-retune: info now next-reboot load-next-reboot
+                        packet-memory-retune load-next-reboot: <file>
+                run: /opt/vyatta/sbin/accton_dpp_dram_retune as5916-54xks %args%

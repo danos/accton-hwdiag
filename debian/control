@@ -16,3 +16,13 @@ Description: Accton AS5916-54XKS SFP helper library
  A package providing a shim layer exposing a common API to the
  underlying operations for the purposes of managing SFPs and
  getting notifications on changes.
+
+Package: accton-as5916-54xks-hwdiag
+Architecture: all
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+         vyatta-op-request-hardware-diagnostic-v1-yang,
+         fal-cmd-ret,
+         python3,
+Description: Accton AS5916-54XKS hardware diagnostics
+ Hardware diagnostics for the Accton AS5916-54KXS platform.

@@ -1,0 +1,2 @@
+hardware-diagnostics/accton-as5916-54xks-diagnostics.yaml opt/vyatta/hardware-diagnostics/
+sbin/accton_dpp_dram_retune opt/vyatta/sbin
