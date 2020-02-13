@@ -1,0 +1,18 @@
+Source: accton-hwdiag
+Section: contrib/net
+Priority: optional
+Maintainer: Vyatta Package Maintainers <DL-vyatta-help@att.com>
+Build-Depends: debhelper (>=9),
+	       debhelper (>= 9.20160709) | dh-systemd (>= 1.5),
+	       dh-python,
+	       python3,
+Standards-Version: 3.9.8
+
+Package: python3-accton-as5916-54xks-sfp-helper
+Architecture: all
+Depends: ${misc:Depends}, ${python3:Depends},
+	  python3-vyatta-platform-sfp (>= 1.0.2),
+Description: Accton AS5916-54XKS SFP helper library
+ A package providing a shim layer exposing a common API to the
+ underlying operations for the purposes of managing SFPs and
+ getting notifications on changes.
