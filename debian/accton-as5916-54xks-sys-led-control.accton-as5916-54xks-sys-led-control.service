@@ -1,0 +1,16 @@
+[Unit]
+After=system-configure.service
+IgnoreOnIsolate=yes
+
+[Service]
+# LOC LED off, Diag red LED off, Diag green LED on
+ExecStart=/usr/bin/bash -c 'test "$(/opt/vyatta/bin/vyatta-platform-util --what-am-i)" = "accton.as5916-54xks" && ipmitool raw 0x34 0x1b 0 0 1'
+# LOC LED off, Diag red LED off, Diag green LED off
+ExecStop=/usr/bin/bash -c 'test "$(/opt/vyatta/bin/vyatta-platform-util --what-am-i)" = "accton.as5916-54xks" && ipmitool raw 0x34 0x1b 0 0 0'
+Type=oneshot
+RemainAfterExit=yes
+StandardOutput=syslog
+StandardError=syslog
+
+[Install]
+WantedBy=basic.target

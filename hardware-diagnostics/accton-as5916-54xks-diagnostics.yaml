@@ -19,4 +19,4 @@ diagnostics:
                 completions:
                         packet-memory-retune: info now next-reboot load-next-reboot
                         packet-memory-retune load-next-reboot: <file>
-                run: /opt/vyatta/sbin/accton_dpp_dram_retune as5916-54xks %args%
+                run: /usr/sbin/accton_dpp_dram_retune as5916-54xks %args%

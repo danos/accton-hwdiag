@@ -26,3 +26,19 @@ Depends: ${misc:Depends},
          python3,
 Description: Accton AS5916-54XKS hardware diagnostics
  Hardware diagnostics for the Accton AS5916-54KXS platform.
+
+Package: accton-as5916-54xks-sys-led-control
+Architecture: all
+Depends: ${misc:Depends},
+Description: Service to set/unset the system LED on AS5916-54XKS platform
+ Service to set the system LED on the Accton AS5916-54XKS platform on
+ startup and unset on shutdown.
+
+Package: accton-as5916-54xks-support
+Architecture: all
+Depends: ${misc:Depends},
+         accton-as5916-54xks-hwdiag,
+         accton-as5916-54xks-sys-led-control,
+Description: Accton AS5916-54XKS support metapackage
+ Metapackage to bring in dependencies for support for the Accton
+ AS5916-54KXS platform.
