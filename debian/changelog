@@ -1,5 +1,7 @@
 accton-hwdiag (1.0.0) unstable; urgency=medium
 
-  * Initial commit
+  * Add hardware diagnostics for AS5916-54XKS platform (Closes: VRVDR-46812)
+  * Support controlling system LED on AS5916-54XKS (Closes: VRVDR-46811)
+  * AS5916-54XKS SFP helper support (Closes: VRVDR-46807)
 
- -- Robert Shearman <robert.shearman@att.com>  Fri, 08 Nov 2019 10:16:24 +0000
+ -- Robert Shearman <robert.shearman@att.com>  Thu, 20 Feb 2020 14:42:34 +0000
