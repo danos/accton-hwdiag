@@ -4,9 +4,9 @@ IgnoreOnIsolate=yes
 
 [Service]
 # LOC LED off, Diag red LED off, Diag green LED on
-ExecStart=/usr/bin/bash -c 'test "$(/opt/vyatta/bin/vyatta-platform-util --what-am-i)" = "accton.as5916-54xks" && ipmitool raw 0x34 0x1b 0 0 1'
+ExecStart=/bin/sh -c 'if /opt/vyatta/bin/vyatta-platform-util --am-i accton.as5916-54xks; then /usr/bin/ipmitool raw 0x34 0x1b 0 0 1; fi'
 # LOC LED off, Diag red LED off, Diag green LED off
-ExecStop=/usr/bin/bash -c 'test "$(/opt/vyatta/bin/vyatta-platform-util --what-am-i)" = "accton.as5916-54xks" && ipmitool raw 0x34 0x1b 0 0 0'
+ExecStop=/bin/sh -c 'if /opt/vyatta/bin/vyatta-platform-util --am-i accton.as5916-54xks; then /usr/bin/ipmitool raw 0x34 0x1b 0 0 0; fi'
 Type=oneshot
 RemainAfterExit=yes
 StandardOutput=syslog

@@ -29,7 +29,9 @@ Description: Accton AS5916-54XKS hardware diagnostics
 
 Package: accton-as5916-54xks-sys-led-control
 Architecture: all
-Depends: ${misc:Depends},
+Depends:
+ vyatta-platform-util (>= 2.8),
+ ${misc:Depends}
 Description: Service to set/unset the system LED on AS5916-54XKS platform
  Service to set the system LED on the Accton AS5916-54XKS platform on
  startup and unset on shutdown.
