@@ -1,3 +1,10 @@
+accton-hwdiag (1.0.1) unstable; urgency=medium
+
+  [ Duncan Eastoe ]
+  * Avoid led-control service failure on other plats
+
+ -- Robert Shearman <robert.shearman@att.com>  Wed, 02 Sep 2020 12:05:38 +0100
+
 accton-hwdiag (1.0.0) unstable; urgency=medium
 
   * Add hardware diagnostics for AS5916-54XKS platform (Closes: VRVDR-46812)
